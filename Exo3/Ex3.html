@@ -18,11 +18,7 @@ body {
     height: 
     100vh;
 }
-table
-{
-    
-    width:500px;
-}
+.grid { display: grid; grid-template-columns: auto auto; }
 
 
 
@@ -30,22 +26,18 @@ table
     </style>
 </head>
 <body>
-    <table style="border: none; border-collapse: collapse;">
-        <tr>
-        <td style="border: none;"><ul  id="todoList" class="list-group">
-
-        
-        </ul></td>
-        <td style="border: none;"><form id="todoForm" class="container" >
+    <div class="grid">
+        <div><ul  id="todoList" class="list-group"> </ul></div>
+        <div><form id="todoForm" class="container" >
             <label for="todoName">Name:</label><br>
             <input type="text" class="form-control" id="todoName" required><br>
             <label for="todoContent">Content:</label><br>
             <input type="text" id="todoContent" class="form-control" required><br>
             <button type="submit" class="btn btn-primary">ADD Todo</button><br>
-        </form></td>
-        </tr>
-        </table>
+        </form></div>
+    </div>
     
+        
     
         
         
@@ -67,29 +59,24 @@ table
 
         function addTodo(name, content) {
             let todoList = document.getElementById("todoList");
-
             let todoDiv = document.createElement("div");
             todoDiv.classList.add("list-group-item");
 
             let todoContentDiv = document.createElement("div");
-            todoContentDiv.innerHTML = `<strong>${name}</strong>: ${content}`;
+            todoContentDiv.innerHTML = `<strong>${name}</strong>: ${content}` +` <i class="fa-solid fa-trash-can" id="deletebtn"></i>`;
+     
 
-            let deleteBtn = document.createElement("button");
-            let i=document.createElement('i');
-            deleteBtn.style.backgroundColor="red";
-            deleteBtn.style.color="white";
-            deleteBtn.innerText="X";
             
 
             
-            deleteBtn.addEventListener("click", function() {
-                todoDiv.remove();
-            });
 
             
             todoDiv.appendChild(todoContentDiv);
-            todoDiv.appendChild(deleteBtn);
             todoList.appendChild(todoDiv);
+            document.getElementById("deletebtn").addEventListener("click",function(){
+        todoDiv.remove();
+    });
+
         }
     </script>
 

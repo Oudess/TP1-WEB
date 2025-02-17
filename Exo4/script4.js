@@ -8,8 +8,8 @@ function getRandomColor(){
 }
 
 
-document.querySelectorAll("#myList li").forEach(item => {
+document.querySelectorAll("#myList li p").forEach(item => {
     item.addEventListener("click", function() {
-        this.style.backgroundColor = getRandomColor();
+        this.style.color = getRandomColor();
     });
 });
