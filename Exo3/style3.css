@@ -1,0 +1,9 @@
+body {
+    background-color: #e9eef4; /* Light gray-blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 
+    100vh;
+}
+.grid { display: grid; grid-template-columns: auto auto; }

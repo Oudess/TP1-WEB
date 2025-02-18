@@ -6,24 +6,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"  />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>To do List</title>
-    <style>
+    <link rel="stylesheet" href="style3.css">
     
 
 
-body {
-    background-color: #e9eef4; /* Light gray-blue background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 
-    100vh;
-}
-.grid { display: grid; grid-template-columns: auto auto; }
 
 
 
 
-    </style>
 </head>
 <body>
     <div class="grid">
@@ -44,41 +34,9 @@ body {
       
 
 
-    <script>
-        document.getElementById("todoForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            
-            let name = document.getElementById("todoName").value.trim();
-            let content = document.getElementById("todoContent").value.trim();
-            
-
-
-            addTodo(name, content);
-            document.getElementById("todoForm").reset();
-        });
-
-        function addTodo(name, content) {
-            let todoList = document.getElementById("todoList");
-            let todoDiv = document.createElement("div");
-            todoDiv.classList.add("list-group-item");
-
-            let todoContentDiv = document.createElement("div");
-            todoContentDiv.innerHTML = `<strong>${name}</strong>: ${content}` +` <i class="fa-solid fa-trash-can" id="deletebtn"></i>`;
-     
-
-            
-
-            
-
-            
-            todoDiv.appendChild(todoContentDiv);
-            todoList.appendChild(todoDiv);
-            document.getElementById("deletebtn").addEventListener("click",function(){
-        todoDiv.remove();
-    });
-
-        }
-    </script>
+    <script src="script3.js"></script>
+        
+    
 
 </body>
 </html>
